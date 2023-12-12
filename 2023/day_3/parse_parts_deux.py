@@ -66,7 +66,6 @@ def checkForMatch(row_index, symbolIndex):
               if debug:
                 print(f"At least one value exists in the array. {key} : {values}") 
               tempValidMatches.append(int(key)) 
-              # del numberDict[row_number][idx]
   if debug:
     print(f"total matches for row_index of : {row_index} && symbol index of {symbolIndex} : {tempValidMatches}")
   
@@ -81,15 +80,8 @@ except FileNotFoundError:
 
 
 for text_string in lines:
-  
   populateNumberDict(text_string)
   populateSymbolsArray(text_string)
-
-  # for match in re.finditer(r'\d+', text_string):
-  #   # print(f"match: {match.group()} match_start: {match.start()} match_end: {match.end()}")
-  #   # print(f"range:??? {list(range(match.start(), match.end()))}")
-  #   temp_numbers.append({match.group(): list(range(match.start(), match.end()))})
-  # numberDict.append(temp)
 
 if debug:
   print(numberDict)  
@@ -107,6 +99,3 @@ for row_index, symbolIndexes in enumerate(symbolArrayIndexes):
 print(f"validNumbers: {validNumbers}")
 print(f"validNumbers sum: {sum(validNumbers)}")
 
-
-# 480854 is too low !
-# 498559 is the correct answer (phew!)
